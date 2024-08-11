@@ -27,7 +27,7 @@ def display_result(col, model_name, confidence, predicted_class, base_confidence
         col.metric(label="Tingkat Keyakinan", value=confidence_str)
     else:
         gap_confidence = (confidence - base_confidence) * 100
-        delta_str = f"{abs(gap_confidence):.2f}% {'lebih tinggi' if gap_confidence > 0 else 'lebih rendah'}"
+        delta_str = f"{gap_confidence:.2f}% {'lebih tinggi' if gap_confidence > 0 else 'lebih rendah'}"
         col.metric(label="Tingkat Keyakinan", value=confidence_str, delta=delta_str)
 
 st.markdown("<h1 style='text-align: center;'>Identifikasi Penyakit Daun Tanaman Jagung</h1>", unsafe_allow_html=True)
